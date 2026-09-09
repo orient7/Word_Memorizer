@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Word Memorizer</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="favicon.ico" />
+    </head>
+    <body>
+        <main class="app">
+            <header class="app-header">
+                <h1>Word Memorizer</h1>
+                <p>英単語を覚えよう。</p>
+            </header>
+
+            <section id="setup-screen" class="screen active">
+                <div class="card setup-card">
+                    <h2>出題範囲</h2>
+                    <div class="range-grid">
+                        <label>
+                            <span>開始番号</span>
+                            <input id="start-number" type="number" min="1" value="1" />
+                        </label>
+                        <span class="range-dash">〜</span>
+                        <label>
+                            <span>終了番号</span>
+                            <input id="end-number" type="number" min="1" value="100" />
+                        </label>
+                    </div>
+                    <p id="range-info" class="info"></p>
+                    <button id="start-button" class="primary-button">始める</button>
+                </div>
+            </section>
+
+            <section id="quiz-screen" class="screen">
+                <div class="quiz-top">
+                    <span id="progress">1 / 1</span>
+                    <span id="score">正解 0</span>
+                </div>
+
+                <div class="card quiz-card">
+                    <p class="question-label">この単語のスペルは？</p>
+                    <div id="meaning-question" class="meaning-question"></div>
+                    <input
+                        id="answer-input"
+                        class="answer-input"
+                        type="text"
+                        autocomplete="off"
+                        autocapitalize="none"
+                        spellcheck="false"
+                        placeholder="英単語を入力"
+                    />
+                    <button id="answer-button" class="primary-button">答え合わせ</button>
+                </div>
+
+                <div id="result-card" class="card result-card hidden">
+                    <div id="result-status" class="result-status"></div>
+                    <div class="correct-answer">
+                        <div class="small-label">正解</div>
+                        <div id="correct-word" class="correct-word"></div>
+                        <div id="correct-meaning" class="word-meaning"></div>
+                    </div>
+                    <div id="typed-answer-area" class="typed-answer hidden">
+                        <div class="small-label">あなたの回答</div>
+                        <div id="typed-word" class="typed-word"></div>
+                        <div id="typed-meaning" class="word-meaning"></div>
+                    </div>
+                    <button id="next-button" class="secondary-button">次の問題</button>
+                </div>
+            </section>
+
+            <section id="finish-screen" class="screen">
+                <div class="card finish-card">
+                    <div class="finish-mark">✓</div>
+                    <h2>終了！</h2>
+                    <div class="accuracy-label">正答率</div>
+                    <div id="accuracy" class="accuracy"></div>
+                    <p id="finish-detail" class="info"></p>
+                    <button id="retry-button" class="primary-button hidden">
+                        間違えた問題をやり直す
+                    </button>
+                    <button id="home-button" class="secondary-button">最初に戻る</button>
+                </div>
+            </section>
+        </main>
+
+        <div id="toast" class="toast"></div>
+
+        <script src="words.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
