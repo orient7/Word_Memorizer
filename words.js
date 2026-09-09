@@ -1,11 +1,11 @@
 // target.csv から自動生成した単語データです。
 // このファイルを直接編集して単語を追加・変更することもできます。
 const WORDS = [
-	{
-		"id": 1,
-		"word": "word",
-		"meaning": "word_mean"
-	},
+	// {
+	// 	"id": 1,
+	// 	"word": "word",
+	// 	"meaning": "word_mean"
+	// },
 	{
 		"id": 1,
 		"word": "create",
